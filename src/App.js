@@ -5,7 +5,7 @@ import Discovery from "./components/Discovery";
 function App() {
   return (
     <main>
-      <h1>Personal Pokédex</h1>
+      <h1>Music Hub</h1>
       <ArtistCard />
       <Discovery />
     </main>
