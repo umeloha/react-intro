@@ -1,15 +1,19 @@
 import React from "react";
-import ArtistCard from "./components/ArtistCard";
-import Discovery from "./components/Discovery";
+import { Routes, Route } from "react-router-dom";
+import { Home, About, Discovery, NotFound } from "./pages";
+import { default as Layout } from "./layout";
 
-function App() {
+const App = () => {
   return (
-    <main>
-      <h1>Music Hub</h1>
-      <ArtistCard />
-      <Discovery />
-    </main>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="discovery" element={<Discovery />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   );
-}
+};
 
 export default App;
